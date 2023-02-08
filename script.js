@@ -62,24 +62,89 @@ const craftingExplosiveCost = [
         name: 'Explosive Ammo',
         sulfurCost: 50,
         metalCost: 10,
-        charcoalCost: 60
+        charcoalCost: 60,
+        image: 'explo-ammo.png'
     },
     {
         name: 'Satchel',
         sulfurCost: 480,
         metalCost: 80,
-        charcoalCost: 720
+        charcoalCost: 720,
+        image: 'satchel.png'
     },
     {
         name: 'C4',
         sulfurCost: 2200,
         metalCost: 200,
-        charcoalCost: 3000
+        charcoalCost: 3000,
+        image: 'c4.png'
     },
     {
         name: 'Rocket',
         sulfurCost: 50,
         metalCost: 10,
-        charcoalCost: 60
+        charcoalCost: 60,
+        image: 'rocket.png'
     },
 ]
+
+const selectBuildingsContainer = document.getElementById('select-buildings-container')
+const buildingImages = document.getElementsByClassName('building-imgs')
+const inputCountContainer = document.getElementById('input-count-container')
+const exploAmmoTotal = document.getElementById('explo-ammo-total')
+const satchelTotal = document.getElementById('satchel-total')
+const c4Total = document.getElementById('c4-total')
+const rocketTotal = document.getElementById('rocket-total')
+
+
+selectBuildingsContainer.addEventListener('click', addBuildingItem)
+
+
+function addBuildingItem(e){
+    if (e.target.classList.contains('building-imgs')){
+        const counter = e.target.nextSibling
+        e.target.classList.add('building-imgs-click')
+        counter.textContent++
+        calulateCost(counter.textContent, e.target.id)
+    }
+    
+}
+
+function calulateCost(amount, item) {
+    let exploAmmo = 0
+    let satchels = 0
+    let c4 = 0
+    let rockets = 0
+
+    for (let buildingItem of buildingItems) {
+        if (buildingItem.name === item){
+            exploAmmo = buildingItem.exploAmmo
+            satchels = buildingItem.satchel
+            c4 = buildingItem.c4
+            rockets = buildingItem.rocket
+        }
+    }
+    exploAmmoTotal.textContent = parseInt(exploAmmoTotal.textContent) + exploAmmo
+    satchelTotal.textContent = parseInt(satchelTotal.textContent) + satchels
+    c4Total.textContent = parseInt(c4Total.textContent) + c4
+    rocketTotal.textContent = parseInt(rocketTotal.textContent) + rockets
+}
+
+function renderBuildingItems() {
+    for (let buildingItem of buildingItems) {
+        const img = document.createElement('img')
+        const div = document.createElement('div')
+        const p = document.createElement('p')
+        div.classList.add('building-item-div')
+        p.classList.add('item-counter')
+        img.classList.add('building-imgs')
+        img.setAttribute('id', buildingItem.name)
+        img.src = `./images/${buildingItem.image}`
+        selectBuildingsContainer.append(div)
+        div.append(img)
+        div.append(p)
+    }
+}
+
+
+renderBuildingItems()

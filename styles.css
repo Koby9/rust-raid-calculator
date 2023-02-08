@@ -7,3 +7,46 @@ body {
 header {
     text-align: center;
 }
+
+.select-buildings-container {
+   display: flex;
+   gap: 20px;
+   justify-content: center;
+}
+
+.input-count-container {
+    margin: 20px 10px;
+}
+
+
+.building-item-div {
+    position: relative;
+}
+
+.building-imgs {
+    width: 80px;
+    border-radius: 10px;
+    position: relative;
+}
+
+.building-imgs:hover {
+    cursor: pointer;
+}
+
+.building-imgs-click {
+    opacity: 50%;
+}
+
+.item-counter {
+    position: absolute;
+    color: black;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+    top: 40%;
+    right: 50%;
+}
+
+.inline {
+    display: inline;
+}
