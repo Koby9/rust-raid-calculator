@@ -4,6 +4,10 @@ body {
     margin: 0;
 }
 
+h2 {
+    text-align: center;
+}
+
 header {
     text-align: center;
 }
@@ -15,9 +19,11 @@ header {
 }
 
 .input-count-container {
-    margin: 20px 10px;
+    margin: 0;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
 }
-
 
 .building-item-div {
     position: relative;
@@ -47,6 +53,22 @@ header {
     right: 50%;
 }
 
-.inline {
-    display: inline;
+.items {
+    position: absolute;
+    color: black;
+    background: white;
+    font-weight: bold;
+    margin: 0;
+    padding: 3px;
+    top: 50%;
+    right: 50%;
+}
+
+.raid-items {
+    position: relative;
+}
+
+.raid-items-img {
+    position: relative;
+    width: 100px;
 }

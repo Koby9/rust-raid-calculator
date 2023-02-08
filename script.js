@@ -98,7 +98,7 @@ const rocketTotal = document.getElementById('rocket-total')
 
 
 selectBuildingsContainer.addEventListener('click', addBuildingItem)
-
+inputCountContainer.addEventListener('click', clickRaidItem)
 
 function addBuildingItem(e){
     if (e.target.classList.contains('building-imgs')){
@@ -107,7 +107,13 @@ function addBuildingItem(e){
         counter.textContent++
         calulateCost(counter.textContent, e.target.id)
     }
-    
+}
+
+function clickRaidItem(e){
+    console.log(e.target)
+    if (e.target.classList.contains('raid-items-img')) {
+        console.log(e.target.nextSibling)
+    }
 }
 
 function calulateCost(amount, item) {
