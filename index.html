@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8"> 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rust Raid Calculator</title>
@@ -13,35 +13,19 @@
     </header>
 
     <main>
-        <div class="select-buildings-container" id="select-buildings-container">
-    
-        </div>
 
-        <h2>Cost To Raid Per Item</h2>
+        <h2>Select Your Raiding Tool</h2>
+        <div class="explosives-container" id="explosives-container"></div>
 
-        <div class="input-count-container" id="input-count-container">
-            <div class="raid-items">
-                <img src="images/explo-ammo.png" alt="" class="raid-items-img">
-                <p id="explo-ammo-total" class="items">0</p>
-            </div>
-            <div class="raid-items">
-                <img src="images/satchel.png" alt="" class="raid-items-img">
-                <p id="satchel-total" class="items">0</p>
-            </div>
-            <div class="raid-items">
-                <img src="images/c4.png" alt="" class="raid-items-img">
-                <p id="c4-total" class="items">0</p>
-            </div>
-            <div class="raid-items">
-                <img src="images/rocket.png" alt="" class="raid-items-img">
-                <p id="rocket-total" class="items">0</p>
-            </div>
-        </div>
-        <div class="answer-container" id="answer-container">
+        <h2>Select What You Are Blowing Through</h2>
+        <div class="select-buildings-container" id="select-buildings-container"></div>
+
+        <h2>Total Cost</h2>
+        <div class="cost-container" id="cost-container">
 
         </div>
     </main>
 
-    <script src="script.js"></script>
+    <script src="script.js" type="module"></script>
 </body>
 </html>

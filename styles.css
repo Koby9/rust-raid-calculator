@@ -2,6 +2,12 @@
 
 body {
     margin: 0;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none;
 }
 
 h2 {
@@ -16,59 +22,49 @@ header {
    display: flex;
    gap: 20px;
    justify-content: center;
+   align-items: center;
 }
 
-.input-count-container {
+.explosives-container {
     margin: 0;
     display: flex;
     gap: 20px;
     justify-content: center;
 }
 
-.building-item-div {
-    position: relative;
+.cost-container {
+    margin: 0 auto;
+    width: 400px;
 }
 
-.building-imgs {
-    width: 80px;
-    border-radius: 10px;
+.defense-item {
+    background-size: cover;
     position: relative;
+    width: 100px;
+    height: 100px;
 }
 
-.building-imgs:hover {
+.defense-item-counter {
+    position: absolute;
+    margin: auto;
+    top: 45%;
+    right: 50%;
+}
+
+#clear-btn:hover, .defense-item, .raid-items {
     cursor: pointer;
 }
 
-.building-imgs-click {
-    opacity: 50%;
-}
-
-.item-counter {
-    position: absolute;
-    color: black;
-    font-weight: bold;
-    margin: 0;
-    padding: 0;
-    top: 40%;
-    right: 50%;
-}
-
-.items {
-    position: absolute;
-    color: black;
-    background: white;
-    font-weight: bold;
-    margin: 0;
-    padding: 3px;
-    top: 50%;
-    right: 50%;
-}
-
 .raid-items {
-    position: relative;
+    width: 100px;
+    height: 100px;
+    background-size: cover;
 }
 
-.raid-items-img {
-    position: relative;
-    width: 100px;
+.border {
+    border: 2px solid red;
+}
+
+.hidden {
+    display: none;
 }
