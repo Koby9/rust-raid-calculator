@@ -47,7 +47,7 @@ const buildingItems = [
         satchel: 2,
         c4: 1,
         rocket: 1,
-        image: 'wood-door.jpg',
+        image: 'wood-door.png',
         amountSelected: 0,
         uuid: uuidv4()
     },
@@ -57,7 +57,7 @@ const buildingItems = [
         satchel: 4,
         c4: 1,
         rocket: 2,
-        image: 'metal-door.jpg',
+        image: 'metal-door.png',
         amountSelected: 0,
         uuid: uuidv4()
     },
@@ -161,8 +161,10 @@ function handleExplosivesSelectionClick(){
         const targetCounter = document.getElementById(`counter-${explo.uuid}`)
         if (explo.isSelected){
             targetCounter.classList.remove('hidden')
+            targetDiv.classList.add('selected')
         } else {
             targetCounter.classList.add('hidden')
+            targetDiv.classList.remove('selected')
         }
     })
 }
@@ -219,7 +221,7 @@ function renderBuildingItems() {
             raidDefenseList += `<div style="background-image:url('/images/${item.image}')" data-raid-building="${item.uuid}" class="defense-item"></div>`
         }
     })
-    raidDefenseList += `<img style="width:30px; height:30px;" src="images/clear-symbol.png" alt="" id="clear-btn">`
+    raidDefenseList += `<button id="clear-btn">CLEAR</button>`
 
     document.getElementById('select-buildings-container').innerHTML = raidDefenseList
 }
@@ -239,9 +241,15 @@ function renderRaidCost(){
     explosives.forEach(function(explo){
         if(explo.isSelected){
              renderedHtml = `
-            <p>Sulfur Required: ${explo.sulfurCost * explo.amountRequired}</p>
-            <p>Metal Frags Required: ${explo.metalCost * explo.amountRequired}</p>
-            <p>Charcoal Required: ${explo.charcoalCost * explo.amountRequired}</p>
+            <p class="resource"><img src="images/sulfur.png" class="resource-img"> ${explo.sulfurCost * explo.amountRequired}</p>
+            <p class="resource"><img src="images/metal-fragments.png" class="resource-img"> ${explo.metalCost * explo.amountRequired}</p>
+            <p class="resource"><img src="images/charcoal.png" class="resource-img"> ${explo.charcoalCost * explo.amountRequired}</p>
+            `
+        } else {
+            renderedHtml = `
+            <p class="resource"><img src="images/sulfur.png" class="resource-img"> ${explo.sulfurCost * explo.amountRequired}</p>
+            <p class="resource"><img src="images/metal-fragments.png" class="resource-img"> ${explo.metalCost * explo.amountRequired}</p>
+            <p class="resource"><img src="images/charcoal.png" class="resource-img"> ${explo.charcoalCost * explo.amountRequired}</p>
             `
         }
     })

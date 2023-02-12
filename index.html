@@ -4,6 +4,9 @@
     <meta charset="UTF-8"> 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
     <title>Rust Raid Calculator</title>
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -13,16 +16,16 @@
     </header>
 
     <main>
-
-        <h2>Select Your Raiding Tool</h2>
-        <div class="explosives-container" id="explosives-container"></div>
-
-        <h2>Select What You Are Blowing Through</h2>
-        <div class="select-buildings-container" id="select-buildings-container"></div>
-
-        <h2>Total Cost</h2>
-        <div class="cost-container" id="cost-container">
-
+        <div class="calculator-container">
+            <h2 class="tool-h2">Select Your Raiding Tool</h2>
+            <div class="explosives-container" id="explosives-container"></div>
+            <h2 class="building-h2">What Are You Raiding?</h2>
+            <div class="select-buildings-container" id="select-buildings-container"></div>
+        </div>
+        
+        <div class="total-container">
+            <h2>Total Cost</h2>
+            <div class="cost-container" id="cost-container"></div>
         </div>
     </main>
 
