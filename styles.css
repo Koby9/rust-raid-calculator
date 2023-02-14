@@ -30,6 +30,11 @@ main {
     margin-top: 50px;
 }
 
+footer {
+    margin-top: 40px;
+    text-align: center;
+}
+
 .select-buildings-container, .explosives-container, .cost-container {
     background-color: #EEEEEE;
     border-radius: 10px;
